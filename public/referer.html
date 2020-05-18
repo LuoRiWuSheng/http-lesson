@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+  <h3>演示防盗链，只能本网站能用，其他网站不能显示</h3>
+  <div class="tips">
+    <ul>
+      <li><span class="order_no">一、</span>演示防盗链，我们可以自己在本地的机器上添加2个自定义域名，我们知道，域名是会被解析成IP的，所以，我们将自定义域名指向127.0.0.1就可以</li>
+      <li><span class="order_no">二、</span> window路径地址： 打开 C:\Windows\System32\drivers\etc 中的hosts文件，如果没有，就创建一个</li>
+      <li><span class="order_no">三、</span>没有hosts文件的人，直接 cmd 创建一个   使用： type nul>hosts 命令</li>
+      <li>
+        <span class="order_no">四、</span>在这里面添加自己的自定义域名
+        <pre>
+      127.0.0.1 zhangsan.com
+      127.0.0.1 lisi.com
+        </pre>
+      </li>
+      <li><span class="order_no">五、</span>
+        <p>可能会遇到配置本地域名以后， 能通过 ping zhangsan.com 但是不能通过浏览器访问， 使用以下方式</p>
+        <p>1、cmd控制台 执行  ipconfig /flushdns 刷新dns</p>
+        <p>2、重启浏览器</p>
+      </li>
+      
+    </ul>
+
+    <div>
+      反防盗链，通过构建成一样的http请求。达到趴取有防盗链的接口/网站
+      <p>案例demo: getRefererImg.js</p>
+    </div>
+
+  </div>
+  <div>
+    <div>我们自己的host是 localhost</div>
+    <img src="/img/a.jpg" alt="">
+    <div>
+      下面这个图的host是 zhangsan.com 跟上面的不一样，但是zhangsan.com想要去访问我们localhost下面的图片，直接被我们重定向到一个默认的图片
+    </div>
+    <div>这就说明，我们的防盗链是成功的，已经拦截到了</div>
+    <img src="http://zhangsan.com:3004/img/a.jpg" alt="">
+    <div>下面这个图片是我们后台允许的域名去访问的， lisi.com</div>
+    <img src="http://lisi.com:3004/img/a.jpg" alt="">
+  </div>
+</body>
+</html>

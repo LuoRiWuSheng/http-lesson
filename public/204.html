@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>发送一个请求，随便什么类型的，后台响应 204</h3>
+  <div>
+    起app.js服务，后台接口在router.js中定义的
+  </div>
+  <script src="/plugins/jquery.js"></script>
+  <script>
+    $.ajax({
+      type: 'GET',
+      url: '/api/test-204',
+      success(res) {
+        console.log(res)
+      },
+      error(err) {
+        console.log(err)
+      }
+    })
+  </script>
+</body>
+</html>

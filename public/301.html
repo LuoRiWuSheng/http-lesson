@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>301永久重定向</h3>
+  <script src="/plugins/jquery.js"></script>
+  <script>
+    $.ajax({
+      url: '/api/301',
+      success(res, stauts, xhr) {
+        console.log(res)
+        // $(document.body).html(res)
+      },
+      error(err) {
+        console.log(res)
+      }
+    })
+  </script>
+</body>
+</html>
