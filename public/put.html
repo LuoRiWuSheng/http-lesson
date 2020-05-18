@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>演示PUT请求， 后台服务起app.js</h3>
+  <div>
+    <input type="text" id='name'>
+    <input type="text" id='age'>
+    <button id='submit'>提交</button>
+  </div>
+  <script src="/plugins/jquery.js"></script>
+  <script>
+    $("#submit").on('click', sendData)
+
+    function sendData() {
+      var name = $("#name").val()
+      var age = $("#age").val()
+
+      $.ajax({
+        url: '/api/test-put',
+        method: 'PUT',
+        data: {
+          name,
+          age
+        },
+        success(res) {
+          console.log(res)
+        }
+      })
+    }
+  </script>
+</body>
+</html>
