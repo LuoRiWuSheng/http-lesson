@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "supervisor -W app.js",
     "serve-test": "supervisor -W list.app.js",
-    "referer": "supervisor -W referer.js"
+    "referer": "supervisor -W referer.js",
+    "cache": "supervisor -W cache.js",
+    "repeat": "supervisor -W repeatHeads.js",
+    "304": "supervisor -W 304.js"
   },
   "keywords": [],
   "author": "",

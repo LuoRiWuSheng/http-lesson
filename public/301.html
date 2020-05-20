@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <h3>301永久重定向</h3>
+  <a href="/api/passToPageRedirect">跳转</a>
+  <form action="/api/passToPageRedirect" method="get">
+    <button type='submit'>表单触发页面跳转</button>
+  </form>
+  <div>
+    通过调用接口进行重定向 <button id='go'>跳</button>
+  </div>
   <script src="/plugins/jquery.js"></script>
   <script>
-    $.ajax({
-      url: '/api/301',
-      success(res, stauts, xhr) {
-        console.log(res)
-        // $(document.body).html(res)
-      },
-      error(err) {
-        console.log(res)
-      }
-    })
+    $('#go').on('click', handle)
+
+    function handle() {
+      $.ajax({
+        url: '/api/passToAPIRedirect',
+        success(res, stauts, xhr) {
+          console.log(xhr.getAllResponseHeaders())
+          console.log(xhr.getResponseHeader('Location')) 
+          /* console.log(xhr.getAllResponseHeaders())
+          console.log(xhr.getResponseHeader('Location')) */
+          window.location.href = xhr.getResponseHeader('Location')
+        },
+        error(err) {
+          console.log(err)
+        }
+      })
+    }
+
   </script>
 </body>
+
 </html>

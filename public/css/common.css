@@ -25,3 +25,43 @@ ul, li {
   font-weight: 700;
   color: chartreuse;
 }
+
+/* 菜单 */
+.menu-wrapper {
+  padding-left: 50px;
+  margin-top: 20px;
+}
+
+.menu-wrapper li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 52px;
+  border-bottom: 1px dashed #e9d475;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.menu-wrapper li::before {
+  position: absolute;
+  left: -40px;
+  top: 0px;
+  content: '——';
+  width: 1px;
+  height: 100%;
+  background: #fff;
+}
+.menu-wrapper li a{
+  display: inline-block;
+  min-width: 320px;
+  text-decoration: none;
+  color: bisque;
+}
+.main-container {
+  background: #343434;
+  color: bisque;
+}
+
+.menu-wrapper li span {
+  color: #f90;
+}

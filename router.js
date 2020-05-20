@@ -15,8 +15,16 @@ module.exports = router => {
     // res.redirect(307, "/api/307-2")
   })
 
-  router.get('/api/301', (req, res)=> {
-    res.redirect(301, '/')
+  // 通过a连接进行重定向操作
+  router.get('/api/passToPageRedirect', (req, res) => {
+    res.redirect(302, 'http://localhost:3000/liuyan.html')
+    res.end()
+  })
+
+  // 通过调用接口，进行重定向操作
+  router.get('/api/passToAPIRedirect', (req, res) => {
+    res.location('http://localhost:3000/liuyan.html')
+    res.end()
   })
 
   router.post('/api/307-2', (req, res) => {
@@ -49,11 +57,11 @@ module.exports = router => {
     res.set('Token', '12346546546')
     res.set('age', 24)
     res.set('hi', 'good')
-   res.status(204)
+    res.status(204)
 
     res.json({
       msg: 'ok'
-    }) 
-    
+    })
+
   })
 }

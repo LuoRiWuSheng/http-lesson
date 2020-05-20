@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h3>请求头或者响应头字段重复，浏览器该如何取舍？</h3>
+  <div>
+    <p>观察浏览器响应的那个接口， 请求中，后面添加的属性，直接覆盖了前面添加的属性</p>
+    <p>响应头中，后设置的headers属性，覆盖前面先设置的属性</p>
+  </div>
+  <script src="/plugins/jquery.js"></script>
+  <script>
+    sendMsg()
+
+    function sendMsg() {
+      $.ajax({
+        url: '/api/repeatHeads',
+        method: 'GET',
+        headers: {
+          age: 12,
+          age: 54
+        },
+        success(res, status, xhr) {
+          console.log(xhr.getAllResponseHeaders())
+        },
+        error(err) {
+          console.log(err)
+        }
+      })
+    }
+  </script>
+
+</body>
+
+</html>
