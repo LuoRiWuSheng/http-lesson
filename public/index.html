@@ -25,6 +25,14 @@
       <span>起 cache.js （npm run cache）服务</span>
     </li>
     <li><a href="/kill-304.html">查看后台请求日志控制台，多次刷新，304请求不在发送到后台</a><span>起 304.js （npm run 304）服务</span></li>
+    <li>
+      <a href="/iframe.html">3000端口去访问3010端口的静态资源，直接通过HTTP拒绝</a>
+      <span>起 app.js和frame-content-refuse.js 这2个服务（npm run dev 和npm run refuse-iframe）</span>
+    </li>
+    <li>
+      <a href="/cors.html">简单请求与非简单请求</a>
+      <span>静态资源起app.js（npm run dev）, 纯后台接口服务起 CORS.js (npm run cors)</span>
+    </li>
   </ul>
 </body>
 </html>

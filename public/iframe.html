@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>使用iframe去加载一个不满足同源策略的内容</h3>
+  <div>
+    下面是 3010端口的test-content.html
+  </div>
+  <iframe src="http://localhost:3010/test-content.html" width="400" height="200" frameborder="0"></iframe>
+  <div>
+    下面加载同源的一个内容--下面是3000端口的test-content.html
+  </div>
+  <iframe src="http://localhost:3000/test-content.html" width="400" height="200" frameborder="0"></iframe>
+</body>
+</html>

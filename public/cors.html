@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/plugins/bootstrap.css">
+  <style>
+    .form-request {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="nav nav-pills" style="margin: 50px 0;">
+    <li class="nav-item" role="presentation"><a class="nav-link " href="/same-origin.html">同源-简单请求</a></li>
+    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">非同源-非简单请求</a></li>
+  </ul>
+  <div>
+    <button id='head-btn' class="btn btn-primary">发送Head请求</button>
+    <button id='get-btn' class="btn btn-primary">发送GET请求</button>
+    <button id='post-btn' class="btn btn-primary">发送POST请求</button>
+    <button id='put-btn' class="btn btn-warning">发送PUT请求</button>
+    <button id='delete-btn' class="btn btn-danger">发送DELETE请求</button>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between">
+      <div>当前请求发送的地址：</div>
+      <div class="address"></div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between">
+      <div>请求方式：</div>
+      <div class="request-method"></div>
+      </div>
+    <li class="list-group-item d-flex justify-content-between">
+      <div>
+        请求的Content-Type:
+      </div>
+      <div class="request-content-type"></div>
+      </div>
+  </ul>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="/js/cors.js"></script>
+</body>
+
+</html>

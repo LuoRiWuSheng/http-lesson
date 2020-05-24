@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/plugins/bootstrap.css">
+  <style>
+    .form-request {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="nav nav-pills" style="margin: 50px 0;">
+    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">同源-简单请求</a></li>
+    <li class="nav-item"  role="presentation"><a  class="nav-link" href="/cors.html">非同源-非简单请求</a></li>
+  </ul>
+
+  <div>
+    <button id='head-btn' class="btn btn-primary">发送Head请求</button>
+    <button id='get-btn' class="btn btn-primary">发送GET请求</button>
+    <button id='post-btn' class="btn btn-primary">发送POST请求</button>
+
+    <div class="form-request">
+      <form enctype="multipart/form-data" id='multy-form' method="post" action='/cors/multy-upload'>
+        <div class="form-group">
+          <label for="">姓名：</label><input class="form-control" type="text" name='name' id='name'>
+        </div>
+        <div class="form-group">
+          <label for="">年龄：</label><input class="form-control" type="text" name='age' id='age'>
+        </div>
+        <div class="form-group">
+          <label for="">介绍：</label><input type="text" class="form-control" name='desc' id='desc'>
+        </div>
+        <div class="form-group">
+          <label for="">上传照片</label>
+          <div>
+            <input type="file" name='img' id='file-upload' multiple>
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">提交表单</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div>
+    当前请求发送的地址：
+    <div class="address"></div>
+    请求方式：<div class="request-method"></div>
+    请求的Content-Type: <div class="request-content-type"></div>
+  </div>
+  <script src="/plugins/jquery.js"></script>
+  <script src="/js/same-origin.js"></script>
+</body>
+
+</html>

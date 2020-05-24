@@ -1,0 +1,2 @@
+Content-Disposition: form-data; name="img"; filename="error-stack.png"
+Content-Type: image/png

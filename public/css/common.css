@@ -53,7 +53,8 @@ ul, li {
 }
 .menu-wrapper li a{
   display: inline-block;
-  min-width: 320px;
+  max-width: 520px;
+  min-width: 520px;
   text-decoration: none;
   color: bisque;
 }
@@ -64,4 +65,5 @@ ul, li {
 
 .menu-wrapper li span {
   color: #f90;
+  margin-left: 50px;
 }
